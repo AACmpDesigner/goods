@@ -1,0 +1,48 @@
+// Place all the styles related to the revenue controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.revenue{
+  margin-top: 20px;
+  .panel{
+    border: 2px solid gray;
+    margin: 20px 0;
+    border-radius: 5px;
+    .header{
+      margin: 0 5px;
+      border-bottom: 1px solid gray;
+      height: 40px;
+      .title{
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .controls{
+        .date{
+          margin-right: 15px;
+          .caption{
+            margin-right: 10px;
+          }
+          .input{
+            width: 100px;
+          }
+        }
+      }
+    }
+    .table{
+      width: 700px;
+      margin: 20px 10px;
+      border-collapse: collapse;
+      th, td {
+        border: 1px solid gray;
+        vertical-align: middle;
+        text-align: center;
+        width: 50%;
+        height: 24px;
+      }
+      th, tfoot td {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+

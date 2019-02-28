@@ -1,0 +1,7 @@
+<div class="goods" ng-controller="GoodsCtrl">
+  <h1>Editing Good</h1>
+  <%= link_to 'Show', @good, class:'navigation' %>
+  <%= link_to 'List', goods_path, class:'navigation' %>
+  <%= link_to 'Revenue', root_path, class:'navigation' %>
+  <%= render 'form', good: @good %>
+</div>

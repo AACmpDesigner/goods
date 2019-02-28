@@ -1,0 +1,12 @@
+valid_params:
+  date_of_sale: 2017-03-01
+  price: 100
+invalid_date_format:
+  date_of_sale: 2017/03/01
+  price: 100
+blank_price:
+  date_of_sale: 2017-03-01
+  price: ''
+invalid_price:
+  date_of_sale: 2017-03-01
+  price: 500a

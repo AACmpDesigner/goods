@@ -1,0 +1,44 @@
+
+<div class="revenue" ng-controller="RevenueCtrl">
+  <%= link_to 'Goods list', goods_path, class:'navigation'%>
+  <div class="panel">
+    <div class="header" layout="row" layout-align="space-between center">
+      <div class="title">Revenue</div>
+      <div class="controls" layout="row" layout-align="space-between center">
+        <div class="date" layout="row" layout-align="start center">
+          <div class="caption">From</div>
+          <input class="input" ng-model="req_data.params.from">
+        </div>
+        <div class="date" layout="row" layout-align="start center">
+          <div class="caption">To</div>
+          <input class="input" ng-model="req_data.params.to">
+        </div>
+        <button ng-click="refresh()">Refresh</button>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Revenue</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="good in table_data.goods">
+        <td>{{good.title}}</td>
+        <td>{{good.revenue}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td>Total</td>
+        <td>{{table_data.total_revenue}}</td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+
+
+

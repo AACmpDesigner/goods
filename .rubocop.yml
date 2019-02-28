@@ -1,0 +1,25 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake,update,yarn,setup,spring}'
+    - !ruby/regexp /old_and_unused\.rb$/
+Rails:
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+Style/ExpandPathArguments:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Metrics/AbcSize:
+  Max: 50
+Metrics/MethodLength:
+  Max: 50
+Metrics/PerceivedComplexity:
+  Max: 10
+
+

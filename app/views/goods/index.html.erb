@@ -1,0 +1,32 @@
+<div class="goods" ng-controller="GoodsCtrl">
+  <% if notice.present? %>
+    <%= render partial:'partials/notice', locals:{notice: notice, type: 'success'} %>
+  <% end %>
+  <h1>Goods</h1>
+  <%= link_to 'New Good', new_good_path, class:'navigation' %>
+  <%= link_to 'Revenue', root_path, class:'navigation' %>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Controls</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    <% @goods.each do |good| %>
+      <tr>
+        <td><%=good.title%></td>
+        <td>
+          <%= link_to 'Show', good, class:'navigation'%>
+          <%= link_to 'Edit', edit_good_path(good) , class:'navigation'%>
+          <%= link_to 'Destroy', good, method: :delete, class:'navigation', 'ng-click': 'destroy_good($event)'%>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+

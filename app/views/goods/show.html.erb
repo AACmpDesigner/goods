@@ -1,0 +1,27 @@
+<div class="goods">
+  <% if notice.present? %>
+    <%= render partial:'partials/notice', locals:{notice: notice, type: 'success'} %>
+  <% end %>
+  <h1><%= @good.title %></h1>
+  <%= link_to 'Edit', edit_good_path(@good), class:'navigation' %>
+  <%= link_to 'List', goods_path, class:'navigation' %>
+  <%= link_to 'Revenue', root_path, class:'navigation' %>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    <% @good.sales.each do |sale| %>
+      <tr>
+        <td><%=sale.date_of_sale%></td>
+        <td><%=sale.price%></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

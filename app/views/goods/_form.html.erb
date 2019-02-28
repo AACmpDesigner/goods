@@ -1,0 +1,38 @@
+<%= form_with(model: good, local: true) do |form| %>
+  <% if @good.errors.any? %>
+    <%= render partial:'partials/notice', locals:{notice: good.errors.values.flatten.join('<br>'), type: 'error'} %>
+  <% end %>
+  
+  <div class="actions" layout="row" layout-align="space-between center">
+    <div layout="row" layout-align="start center">
+      <%= form.label :title, class: 'title-label' %>
+      <%= form.text_field :title, class: 'title-input' %>
+    </div>
+    <%= form.submit %>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Price</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    <%= form.fields_for :sales do |sales_form| %>
+      <tr>
+        <td><%= sales_form.text_field :date_of_sale, class: 'value-input' %></td>
+        <td><%= sales_form.text_field :price, class: 'value-input' %></td>
+        <td><%= sales_form.check_box :_destroy %></td>
+      </tr>
+    <% end %>
+    <tr ng-repeat="new_sales in new_sales_attributes">
+      <td><input class="value-input" type="text" value="" name="good[new_sales_attributes][{{new_sales}}][date_of_sale]" ></td>
+      <td><input class="value-input" type="text" value="" name="good[new_sales_attributes][{{new_sales}}][price]" ></td>
+      <td><md-icon class="delete-sale" ng-click="delete(new_sales)"> close </md-icon></td>
+    </tr>
+    </tbody>
+  </table>
+<% end %>
+<button class="add-sale" ng-click="add()">Add Sale</button>
